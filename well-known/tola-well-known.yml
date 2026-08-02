@@ -1,0 +1,25 @@
+generated: '2026-07-21'
+method: probed
+source: live HTTP probes of Tola web hosts
+note: >-
+  Tola's marketing host tolahq.com (Webflow) 302-redirects to usetola.com, which
+  sits behind a Cloudflare WAF. Every /.well-known/ path returns a WAF block
+  (403 on tolahq.com after redirect, 503 on usetola.com) rather than a real
+  document, so no discovery artifacts could be captured. Absence is a valid,
+  recorded result — no WellKnown/SecurityTxt pointer is wired because no catalog
+  or security.txt is actually published/served.
+hosts:
+- host: https://tolahq.com
+  documents:
+  - {path: /.well-known/security.txt, status: 403, file: null}
+  - {path: /.well-known/openid-configuration, status: 403, file: null}
+  - {path: /.well-known/oauth-authorization-server, status: 403, file: null}
+  - {path: /.well-known/api-catalog, status: 403, file: null}
+  - {path: /.well-known/ai-plugin.json, status: 403, file: null}
+- host: https://usetola.com
+  documents:
+  - {path: /.well-known/security.txt, status: 503, file: null}
+  - {path: /.well-known/openid-configuration, status: 503, file: null}
+  - {path: /.well-known/oauth-authorization-server, status: 503, file: null}
+  - {path: /.well-known/api-catalog, status: 503, file: null}
+  - {path: /.well-known/ai-plugin.json, status: 503, file: null}
