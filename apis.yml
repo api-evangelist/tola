@@ -31,6 +31,8 @@ x-enrichment:
   pass: local-v1
 tags:
 - Company
+tags_raw:
+- Company
 - Other
 apis: []
 maintainers:
