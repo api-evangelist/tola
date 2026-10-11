@@ -1,0 +1,11 @@
+[
+  {
+    "repo": "tola",
+    "captured_at": "2026-10-11T193039",
+    "source_url": "https://tolahq.com",
+    "source_type": "root-domain",
+    "file": "tola-2026-10-11T193039.png",
+    "bytes": 82059,
+    "capture": "playwright-local"
+  }
+]
